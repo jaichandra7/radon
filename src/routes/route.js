@@ -18,7 +18,7 @@ router.get('/hello',function(req,res){
   console.log(lodash.chunk(mt,4))
 
 
-  const gt=[1, 3,5,7,9,11,13,15,17,19]
+  const gt=[1,3,5,7,9,11,13,15,17,19]
   console.log(lodash.tail(gt))
 
 
