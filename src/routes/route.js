@@ -1,4 +1,5 @@
 const express = require('express');
+const { xor } = require('lodash');
 const lodash = require('lodash');
 const externalModule1 =require('../logger/logger')
 const externalModule2 =require('../util/helper')
@@ -38,7 +39,59 @@ console.log(lodash.fromPairs(ms))
   res.send("J .A .I")
 })
 
+router.get('/hey',function(req,res){
+  res.send('boomer')
+});
+let players=
+[
+  {
+    "name": "manish",
+    "dob": "1/1/1995",
+    "gender": "male",
+    "city": "jalandhar",
+    "sports": [
+      "swimming"
+    ]
+  },
+  {
+    "name": "gopal",
+    "dob": "1/09/1995",
+    "gender": "male",
+    "city": "delhi",
+    "sports":[
+           "soccer"
+    ]
+  },
+  {
+    "name": "lokesh",
+    "dob": "1/1/1990",
+    "gender": "male",
+    "city": "mumbai",
+    "sports":[
+         "soccer"
+    ]
+  },
+]
+router.post('/players', function (req,res){
+let mx = req.body
+let mx2 = mx.name
+let isNameRepeated = false
 
+for(let i=0; i < players.length; i++)
+{
+  if(players[i].name == mx2)
+  {
+   isNameRepeated=true;
+    break;
+  }
+}
+if(isNameRepeated){
+  res.send("this player was already added!")
+} else{
+  players.push(mx)
+  res.send(players)
+}
+});
 
 module.exports = router;
 // adding this comment for no reason
