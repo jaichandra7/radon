@@ -15,7 +15,7 @@ mongoose.connect("mongodb+srv://jaichandra:9908078754b@cluster0.pwobr.mongodb.ne
 .catch ( err => console.log(err) )
 
 const assignmentMW = function (req, res, next) {
-    let today  = new Date();
+    let today = new Date();
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
      let dateTime = date+' '+time;
