@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Objectid = mongoose.Schema.Types.ObjectId
+
 
 const publisherSchema = new mongoose.Schema({
    
@@ -9,4 +9,4 @@ const publisherSchema = new mongoose.Schema({
 }, 
     { timestamps : true });
 
-module.exports = mongoose.model('publishers',publisherSchema )
+module.exports = mongoose.model("newPublisher",publisherSchema )
